@@ -6,11 +6,10 @@ import re
 
 def filter_datum(fields, redaction, message, separator):
     """ a function that returns logging info """
-    fields =
-    redaction =
-    message =
-    seperator = 
-    return re.sub(
+    pattern = '|'.join([f"{field}=[^{separator}]+"
+                        for field in fields])  
+    return re.sub(pattern, lambda match: match.group(0).split(
+        '=')[0] + '=' + redaction, message)
 
 
 class RedactingFormatter(logging.Formatter):
