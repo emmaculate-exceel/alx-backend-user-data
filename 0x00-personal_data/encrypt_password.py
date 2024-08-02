@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """ a script that encripts """
-
 import bcrypt
 
 
