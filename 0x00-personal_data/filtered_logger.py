@@ -27,7 +27,5 @@ class RedactingFormatter(logging.Formatter):
         NotImplementedError
       
         
-
-
-
-
+def main:
+    return get_db
