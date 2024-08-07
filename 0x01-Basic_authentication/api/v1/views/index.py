@@ -11,7 +11,7 @@ def unauthorized() -> str:
     Return :
       - abortive response
     """
-    return jsonify({"error": "Unauthorized"})
+    abort(401)
 
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
