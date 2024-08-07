@@ -7,6 +7,8 @@ from api.v1.views import app_views
 
 @app_views.route('/api/v1/unauthorized', method=['GET'])
 def unauthorized():
+    """ unauthorized access
+    """
     abort(401)
 
 
