@@ -25,7 +25,7 @@ def not_found(error) -> str:
 def abort(error) -> str:
     """Unauthorised request
     """
-    return jsonify({"error": "Unauthorized"})
+    return jsonify({"error": "Unauthorized"}), 401
 
 
 if __name__ == "__main__":
