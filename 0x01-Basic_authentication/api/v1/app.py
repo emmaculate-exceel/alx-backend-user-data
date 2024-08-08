@@ -20,6 +20,7 @@ def restriction(error) -> str:
     """
     return jsonify({"error": "Forbidden"}), 403
 
+
 @app.errorhandler(404)
 def unauthorized(error) -> str:
     """ Not found handler
