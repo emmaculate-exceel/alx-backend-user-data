@@ -11,16 +11,16 @@ class Auth:
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """ required authentication
         """
-        pass
+        return False
 
 
     def authorization_header(self, request=None) -> str:
         """ authorized header
         """
-        pass
+        return None
 
 
     def current_user(self, request=None) -> str:
         """ user authentication
         """
-        pass
+        return None
