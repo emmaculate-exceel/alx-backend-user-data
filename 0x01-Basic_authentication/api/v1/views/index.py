@@ -11,7 +11,7 @@ def unauthorized() -> str:
     Return :
       - abortive response
     """
-    abort(401)
+    abort(401, description="Unauthorized")
 
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
