@@ -9,7 +9,8 @@ class Auth:
     an authentication object
     """
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
-        """ required authentication
+        """
+        required authentication
         """
         if path in excluded_paths:
             return True
@@ -18,11 +19,13 @@ class Auth:
         return False
 
     def authorization_header(self, request=None) -> str:
-        """ authorized header
+        """
+        authorized header
         """
         return None
 
     def current_user(self, request=None) -> TypeVar('User'):
-        """ user authentication
+        """
+        user authentication
         """
         return None
