@@ -16,12 +16,10 @@ class Auth:
         else:
             return False
 
-
     def authorization_header(self, request=None) -> str:
         """ authorized header
         """
         return None
-
 
     def current_user(self, request=None) -> TypeVar('User'):
         """ user authentication
