@@ -14,10 +14,6 @@ class Auth:
         """
         required authentication
         """
-        if path in excluded_paths:
-            return True
-        else:
-            return False
         return False
 
     def authorization_header(self, request=None) -> str:
