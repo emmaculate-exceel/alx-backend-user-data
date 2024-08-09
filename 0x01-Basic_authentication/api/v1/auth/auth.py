@@ -23,7 +23,7 @@ class Auth:
         return None
 
 
-    def current_user(self, request=None) -> str:
+    def current_user(self, request=None) -> TypeVar('User'):
         """ user authentication
         """
         return None
