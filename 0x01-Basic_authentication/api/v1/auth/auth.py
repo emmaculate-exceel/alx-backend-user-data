@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# an authication code the sessions
+""" an authication code that checks sessions
+    and authenticate users
+"""
 
 from flask import request
 
