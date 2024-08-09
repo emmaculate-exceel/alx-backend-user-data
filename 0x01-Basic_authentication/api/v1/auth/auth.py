@@ -14,12 +14,12 @@ class Auth:
         """
         required authentication
         """
-        if path is None:
+        """if path is None:
             return True
         if excluded_paths is None || not excluded_paths:
             return True
         if path is in excluded_paths:
-            return False
+            return False"""
         """n_path = path.rstrip('/')
         n_excluded_path = [ex_p.rstrip('/') for ex_p in excluded_paths]
 
