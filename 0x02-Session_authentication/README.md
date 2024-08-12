@@ -1,0 +1,1 @@
+Session authentication for a user validation and authentication
