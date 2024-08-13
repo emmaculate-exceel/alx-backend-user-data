@@ -7,6 +7,9 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 class User(Base):
+    """
+    creating a user model
+    """
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     email = Column(String, nullable=False)
