@@ -21,7 +21,7 @@ class User(Base):
 
     """ def __repr__(self):
          #string representation of object
-        
+
         return (
             "< User(id='%s', email='%s', "
             "hashed_password='%s', "
