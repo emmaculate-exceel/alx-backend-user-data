@@ -22,13 +22,14 @@ class User(Base):
     def __repr__(self):
         """ string representation of object
         """
-        return "< User(id='%s', email='%s',
-                       hashed_password='%s',
-                       session_id='%s',
-                       reset_token='%s') >
-        " % (
-            self.id, self.email,
-            self.hashed_password,
-            self.session_id,
-            self.reset_token
+        return (
+            "< User(id='%s', email='%s', "
+            "hashed_password='%s', "
+            "session_id='%s', "
+            "reset_token='%s') > " % (
+                self.id, self.email,
+                self.hashed_password,
+                self.session_id,
+                self.reset_token
+            )
         )
