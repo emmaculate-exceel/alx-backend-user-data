@@ -28,3 +28,8 @@ class DB:
             DBsession = sessionmaker(bind=self.__engine)
             self.__session = DBsession()
         return self.__session
+
+    @property
+    def add_user(email: str, hashed_password: str) -> User:
+        """saving user to the DB
+        """
