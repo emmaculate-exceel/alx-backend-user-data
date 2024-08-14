@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """ creating an SQLAlchemy model """
-import bycrypt
 import sqlalchemy
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import declarative_base
@@ -20,9 +19,9 @@ class User(Base):
     session_id = Column(String(250), nullable=False)
     reset_token = Column(String(250), nullable=False)
 
-    def __repr__(self):
-        """ string representation of object
-        """
+    """ def __repr__(self):
+         #string representation of object
+        
         return (
             "< User(id='%s', email='%s', "
             "hashed_password='%s', "
@@ -34,3 +33,4 @@ class User(Base):
                 self.reset_token
             )
         )
+        """
