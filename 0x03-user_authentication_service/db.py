@@ -33,3 +33,6 @@ class DB:
     def add_user(email: str, hashed_password: str) -> User:
         """saving user to the DB
         """
+
+
+        return User
