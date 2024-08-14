@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""
+"""11;rgb:0707/0000/0000
 Main module
 """
 
@@ -18,14 +18,13 @@ def register_user(email: str, password: str) -> None:
                             data={'email': email, 'password': password})
     assert response.status_code == 200
 
+
 def log_in_wrong_password(email: str, password: str) -> None:
     """logging in the wrong way
     """
     response = request.post
 
-
-
-    if __name__ == '__main__':
+if __name__ == '__main__':
         register_user(EMAIL, PASSWD)
         log_in_wrong_password(EMAIL, NEW_PASSWD)
         profile_unlogged()
