@@ -16,20 +16,19 @@ class DB:
         """initializing a DB instance
         """
         self.engine = create_engine("sqlite:///a.db", echo=True)
-        Base.metadata.drop_all(self.__engine)
-        Base.metadata.create_all(self.__engine)
+        Base.metadata.drop_all(self._engine)
+        Base.metadata.create_all(self._engine)
         self.__session = None
 
     @property
-    def __session(self) -> Session:
+    def _session(self) -> Session:
         """Memoized session object
         """
         if self.__session is None:
-            DBsession = sessionmaker(bind=self.__engine)
+            DBsession = sessionmaker(bind=self._engine)
             self.__session = DBsession()
         return self.__session
 
-    @property
     def add_user(self, email: str, hashed_password: str) -> User:
         """saving user to the DB
         """
