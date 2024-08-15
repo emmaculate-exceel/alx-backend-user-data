@@ -1,3 +1,4 @@
+ls
 #!/usr/bin/env python3
 """DB module
 """
@@ -30,9 +31,11 @@ class DB:
         return self.__session
 
     @property
-    def add_user(email: str, hashed_password: str) -> User:
+    def add_user(self, email: str, hashed_password: str) -> User:
         """saving user to the DB
         """
+        new_user = User(email=email, hashed_password=hashed_password)
+        self._session.add(new_user)
+        self._session.commit()
 
-
-        return User
+        return new_user
