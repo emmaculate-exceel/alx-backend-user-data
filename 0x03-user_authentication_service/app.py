@@ -13,19 +13,18 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index() -> str:
-    """_summary_
+    """root route
     """
     return jsonify({"message": "Bienvenue"})
 
 
 @app.route('/users', methods=['POST'])
 def users() -> str:
-    """_summary_
+    """user route
     """
     email = request.form.get('email')
     password = request.form.get('password')
 
-    # regsiter user if user does not exist
     try:
         user = AUTH.register_user(email, password)
         return jsonify({"email": user.email, "message": "user created"})
@@ -35,7 +34,7 @@ def users() -> str:
 
 @app.route('/sessions', methods=['POST'])
 def login() -> str:
-    """_summary_
+    """route for each session
 
     Returns:
         str: _description_
@@ -56,7 +55,7 @@ def login() -> str:
 
 @app.route('/sessions', methods=['DELETE'])
 def logout() -> str:
-    """_summary_
+    """route for logout session
     """
     session_id = request.cookies.get('session_id')
     user = AUTH.get_user_from_session_id(session_id)
@@ -68,7 +67,7 @@ def logout() -> str:
 
 @app.route('/profile', methods=['GET'])
 def profile() -> str:
-    """_summary_
+    """profile session
     """
     session_id = request.cookies.get('session_id')
     user = AUTH.get_user_from_session_id(session_id)
@@ -80,7 +79,7 @@ def profile() -> str:
 
 @app.route('/reset_password', methods=['POST'])
 def get_reset_password_token() -> str:
-    """_summary_
+    """reset_passwd session
 
     Returns:
         str: _description_
@@ -95,7 +94,7 @@ def get_reset_password_token() -> str:
 
 @app.route('/reset_password', methods=['PUT'])
 def update_password() -> str:
-    """_summary_
+    """reset passwd route
 
     Returns:
         str: _description_

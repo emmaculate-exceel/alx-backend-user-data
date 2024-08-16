@@ -13,7 +13,7 @@ from typing import Union
 
 
 def _hash_password(password: str) -> str:
-    """_summary_
+    """hashing password
 
     Args:
         password (str): _description_
@@ -25,7 +25,7 @@ def _hash_password(password: str) -> str:
 
 
 def _generate_uuid() -> str:
-    """_summary_
+    """unique identifiers
 
     Raises:
         ValueError: _description_
@@ -39,15 +39,16 @@ def _generate_uuid() -> str:
 
 class Auth:
     """Auth class to interact with the authentication database.
+       authenticating DB
     """
 
     def __init__(self):
-        """_summary_
+        """instantiation 
         """
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> Union[None, User]:
-        """_summary_
+        """registering user
         """
         try:
             # find the user with the given email
@@ -61,7 +62,7 @@ class Auth:
             raise ValueError('User {} already exists'.format(email))
 
     def valid_login(self, email: str, password: str) -> bool:
-        """_summary_
+        """valid login credentials
 
         Args:
             email (str): _description_
@@ -79,7 +80,7 @@ class Auth:
         return bcrypt.checkpw(password.encode('utf-8'), user.hashed_password)
 
     def create_session(self, email: str) -> str:
-        """_summary_
+        """session handler
 
         Args:
             email (str): _description_
@@ -96,7 +97,7 @@ class Auth:
             return user.session_id
 
     def get_user_from_session_id(self, session_id: str) -> User:
-        """_summary_
+        """getting users from sessions
 
         Args:
             session_id (_type_): _description_
@@ -111,7 +112,7 @@ class Auth:
             return user
 
     def destroy_session(self, user_id: str) -> None:
-        """_summary_
+        """destroying sessions
 
         Args:
             user_id (str): _description_
@@ -125,7 +126,7 @@ class Auth:
             return None
 
     def get_reset_password_token(self, email: str) -> str:
-        """_summary_
+        """passwd tokens 
 
         Args:
             email (str): _description_
@@ -142,7 +143,7 @@ class Auth:
             return user.reset_token
 
     def update_password(self, reset_token: str, password: str) -> None:
-        """_summary_
+        """update passwords
 
         Args:
             reset_token (str): _description_
