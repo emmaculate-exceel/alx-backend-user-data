@@ -43,7 +43,7 @@ class Auth:
     """
 
     def __init__(self):
-        """instantiation 
+        """instantiation
         """
         self._db = DB()
 
@@ -126,7 +126,7 @@ class Auth:
             return None
 
     def get_reset_password_token(self, email: str) -> str:
-        """passwd tokens 
+        """passwd tokens
 
         Args:
             email (str): _description_
